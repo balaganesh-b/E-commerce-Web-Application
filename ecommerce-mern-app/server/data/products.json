@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Classic White T-Shirt",
+    "description": "Soft cotton white t-shirt, perfect for everyday wear.",
+    "price": 499,
+    "imageUrl": "https://via.placeholder.com/300x200?text=White+T-Shirt",
+    "category": "Clothing",
+    "inStock": true
+  },
+  {
+    "name": "Wireless Headphones",
+    "description": "Noise-cancelling wireless headphones with long battery life.",
+    "price": 2999,
+    "imageUrl": "https://via.placeholder.com/300x200?text=Headphones",
+    "category": "Electronics",
+    "inStock": true
+  },
+  {
+    "name": "Laptop Backpack",
+    "description": "Water-resistant backpack with padded laptop compartment.",
+    "price": 1499,
+    "imageUrl": "https://via.placeholder.com/300x200?text=Backpack",
+    "category": "Accessories",
+    "inStock": true
+  },
+  {
+    "name": "Sports Shoes",
+    "description": "Comfortable running shoes for daily workouts.",
+    "price": 2499,
+    "imageUrl": "https://via.placeholder.com/300x200?text=Shoes",
+    "category": "Footwear",
+    "inStock": true
+  }
+]
