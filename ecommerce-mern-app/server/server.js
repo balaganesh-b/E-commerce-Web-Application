@@ -3,7 +3,7 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
-
+const mongoose = require("mongoose");
 const connectDB = require("./config/db");
 const Product = require("./models/Product");
 const productRoutes = require("./routes/productRoutes");
@@ -39,21 +39,23 @@ const seedProducts = async () => {
     console.error("Error seeding products:", error.message);
   }
 };
+const startServer = async () => {
+  await connectDB();
 
-if (process.argv.includes("--seed")) {
-  seedProducts().then(() => {
+  // IMPORTANT: wait for mongoose ready state
+  await mongoose.connection.asPromise();
+
+  if (process.argv.includes("--seed")) {
+    await seedProducts();
     console.log("Seeding done. Exiting.");
     process.exit(0);
-  });
-} else {
-  // Routes
-  app.get("/", (req, res) => {
-    res.send("E-commerce API is running. Use /api/products");
-  });
+  }
 
   app.use("/api/products", productRoutes);
 
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
-}
+};
+
+startServer();

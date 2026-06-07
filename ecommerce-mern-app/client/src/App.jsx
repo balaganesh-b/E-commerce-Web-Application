@@ -116,9 +116,14 @@ function CartPage() {
           ))}
           <div className="cart-total">
             <p>Total: ₹{totalPrice}</p>
-            <button className="btn btn-primary" disabled>
-              Checkout (Demo)
-            </button>
+            <button
+  className="btn btn-primary"
+  onClick={() => {
+  alert(`Order placed! Total: ₹${totalPrice}`);
+}}
+>
+  Checkout (Demo)
+</button>
           </div>
         </div>
       )}
